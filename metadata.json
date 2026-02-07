@@ -1,0 +1,7 @@
+{
+  "requestFramePermissions": [
+    "display-capture"
+  ],
+  "name": "Optic-1: Dark Pattern Decoder",
+  "description": "digital self-defense"
+}
