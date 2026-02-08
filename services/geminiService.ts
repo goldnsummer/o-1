@@ -1,5 +1,5 @@
 
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI, Type, ThinkingLevel } from "@google/genai";
 import { ScanResponse, Severity, DarkPatternScan, CatalogAnchor, toSeverity, DefensiveStatus } from "../types";
 
 const wait = (ms: number) => new Promise((res) => setTimeout(res, ms));
@@ -129,8 +129,7 @@ export async function analyzeUIScreen(
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
           responseMimeType: "application/json",
-          thinkingConfig: { thinkingBudget: 16384 },
-          maxOutputTokens: 20000,
+          thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH },
           responseSchema: {
             type: Type.OBJECT,
             properties: {
